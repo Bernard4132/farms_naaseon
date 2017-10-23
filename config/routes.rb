@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   resources :orders
   resources :products
   root to: "static_pages#home"
