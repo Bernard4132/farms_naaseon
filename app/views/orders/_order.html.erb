@@ -17,7 +17,7 @@
 	  <div class="row">
       <div class="col-sm-12 col-lg-12">
        <span style="margin-bottom: 10px;"><strong>Farms Produce:</strong> <%= order.title %></span><br>
-       <span style="margin-bottom: 10px;"><strong>Number:</strong> <%= order.number %></span><br>
+       <span style="margin-bottom: 10px;"><strong>Number:</strong> <%= order.number %> <%= order.measureunit %></span><br>
        <p style="margin-top: 20px;"><%= link_to "See Order" , order, :class => "btn btn-primary" %> <a href="#!" class="btn btn-success">Fulfill Order</a></p>
       </div>
     </div>
