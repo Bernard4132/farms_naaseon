@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   @order.update(fulfilled: true)
   OrderMailer.order_fulfillment_alert(@order).deliver_later
   redirect_to "/mydashboard"
-  flash[:notice] = 'You have fulfilled the Order.'
+  flash[:notice] = 'Order fulfilled by Admin.'
 end
 
   # POST /orders
