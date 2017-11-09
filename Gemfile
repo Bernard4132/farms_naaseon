@@ -33,6 +33,10 @@ gem 'carrierwave', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
+gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+
 group :production do
 gem 'pg'
 gem 'rails_12factor'

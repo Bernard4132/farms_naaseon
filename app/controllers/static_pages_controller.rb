@@ -13,7 +13,12 @@ end
 def faqs
 end
 
-def terms
+def mydashboard
+	if signed_in?
+	@allorders = Order.all
+	@allcontacts = Contact.all
+	render layout: "admin"
+    end
 end
 
 end
