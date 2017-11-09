@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:show]
 
   # GET /orders
   # GET /orders.json
@@ -52,8 +53,8 @@ end
     render "new"
   else
     session[:order_step] = session[:order_params] = nil
-    flash[:notice] = "Order made successfully to Naaseon Farms!"
-    redirect_to @order
+    flash[:notice] = "Your order has been made successfully to Naaseon Farms! You will be contacted soon. Thank you!"
+    redirect_to "/"
   end
 end
 
