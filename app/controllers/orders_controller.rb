@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    render layout: "admin"
   end
 
   # GET /orders/new
@@ -22,6 +23,14 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
   end
+
+  def fulfill
+  @order = Order.find(params[:id])
+  @order.update(fulfilled: true)
+  OrderMailer.order_fulfillment_alert(@order).deliver_later
+  redirect_to "/mydashboard"
+  flash[:notice] = 'You have fulfilled the Order.'
+end
 
   # POST /orders
   # POST /orders.json
@@ -43,7 +52,7 @@ class OrdersController < ApplicationController
     render "new"
   else
     session[:order_step] = session[:order_params] = nil
-    flash[:notice] = "Order saved!"
+    flash[:notice] = "Order made successfully to Naaseon Farms!"
     redirect_to @order
   end
 end

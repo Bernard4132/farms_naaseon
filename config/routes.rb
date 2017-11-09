@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :contacts
-  resources :orders
+
+  resources :orders do
+  	member { post :fulfill }
+  end
+
   resources :products
   root to: "static_pages#home"
   match 'about', to: 'static_pages#about', via: 'get'

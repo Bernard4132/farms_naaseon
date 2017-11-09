@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109025146) do
+ActiveRecord::Schema.define(version: 20171109082003) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20171109025146) do
     t.integer  "number"
     t.string   "paymentoptions"
     t.boolean  "accept"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "title"
     t.string   "measureunit"
     t.text     "message"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171109025146) do
     t.string   "buyername"
     t.string   "buyerphone"
     t.string   "buyeremail"
+    t.boolean  "fulfilled",      default: false
   end
 
   create_table "photos", force: :cascade do |t|
