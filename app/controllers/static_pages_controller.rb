@@ -15,8 +15,9 @@ end
 
 def mydashboard
 	if signed_in?
-	@allorders = Order.all
+	@allorders = Order.where(fulfilled: false).all
 	@allcontacts = Contact.all
+	@fulfilledorders = Order.where(fulfilled: true).all
 	render layout: "admin"
     end
 end

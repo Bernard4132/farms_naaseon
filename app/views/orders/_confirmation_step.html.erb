@@ -227,7 +227,7 @@ ul.checkout-bar a {
 <p><strong>Buyer Email Address: </strong><%= @order.buyeremail %></p>
 
  <div class="form-group">
-    <%= f.check_box :accept %>
+    <%= f.check_box :accept, :required => "true" %>
     <label>Accept</label>
   </div>
 

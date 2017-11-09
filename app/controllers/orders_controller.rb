@@ -53,7 +53,7 @@ end
     render "new"
   else
     session[:order_step] = session[:order_params] = nil
-    flash[:notice] = "Your order has been made successfully to Naaseon Farms! You will be contacted soon. Thank you!"
+    flash[:notice] = "Your order has been made successfully to Naaseon Farms. You will be contacted soon. Thank you!"
     redirect_to "/"
   end
 end
